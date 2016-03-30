@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}SLR System - My Project{% endblock %}
+
+{% block content %}
+<div>
+	<row centered>
+	    <column cols="6">
+	    	<div id="hero-box">
+		        <h1>My SLR</h1> 
+		    </div>
+			<table class="table-stripped" id="aligner">
+				<thead>
+					<tr>
+						<th "width-1">ID</th>
+						<th "width-3">Project Title</th>
+						<th "width-3">Research Objective</th>
+				</thead>
+				<tbody>
+					{% for project in project_list %}
+						<tr>
+							<td>{{ project.id }}</td>
+							<td>{{ project.project_title }}</td>
+							<td>{{ project.project_objective }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</column>
+	</row>
+</div>
+{% endblock %}

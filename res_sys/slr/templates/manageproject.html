@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}SLR System - ManageProject{% endblock %}
+
+{% block content %}
+
+
+<div>
+  <row centered>
+      <column cols="6">
+      <div>
+        <h1>New SLR</h1>
+        <p>Start a new systematic literature review</p>  
+      </div>
+            
+        <form method="post" action="/manageproject/" class="forms">
+          
+          {% csrf_token %}
+
+          <section style="display:none;">
+            <label for="project_id">Project ID</label>
+              {{ form.project_id }}
+          </section>
+          
+          <section>
+            <label for="project_title">Project Title<span class="req">*</span></label>
+              {{ form.project_title }}
+          </section>
+
+          <section>
+            <label for="project_objective">Research Objective</label>
+              {{ form.project_objective }}
+          </section>
+
+          <section>
+              <button type="primary" id="btn-save-change" name="edit" style="display: none;" >Edit</button>
+              <button type="primary" id="btn-save-add" name="add">Add</button>
+              <button type="" id="btn-reset">Reset</button>
+          </section>
+
+        </form>
+    </column>
+  </row>
+</div>
+{% endblock %}
